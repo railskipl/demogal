@@ -10,13 +10,7 @@ Rails::Initializer.run do |config|
   
 
   
-  config.middleware.use "NoWWW" if RAILS_ENV == 'development'
-  
-  CONFIG = (YAML.load_file('config/config.yml')[RAILS_ENV] rescue {}).merge(ENV) # support yaml and heroku config
-  
-  config.action_controller.session = {
-    :key => CONFIG['session_key'],
-    :secret => CONFIG['session_secret'] || CONFIG['secret']
+  }
   }
     
   RE_LOGIN_RES = %w(admin all test help blog faq message messages login logout signup settings 
